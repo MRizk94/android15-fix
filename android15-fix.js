@@ -1,4 +1,4 @@
-<script> document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
     const isAndroid15 = userAgent.includes("Android 15");
 
@@ -40,4 +40,3 @@
       if (floatingMenu) floatingMenu.style.bottom = "132.5px";
     }
   });
-</script>
