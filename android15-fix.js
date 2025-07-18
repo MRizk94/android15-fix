@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (fab) fab.style.bottom = "82.5px";
 
     const navbar = document.querySelector('.navbar');
-    if (navbar) navbar.style.bottom = "45px";
+    if (navbar) navbar.style.bottom = "40px";
 
     const floatingText = document.querySelector('.floating-text');
     if (floatingText) floatingText.style.bottom = "67.5px";
