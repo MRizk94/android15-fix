@@ -62,10 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // تعديل مسافة أيقونة YouTube من الأسفل
     const youtubeIconElement = document.querySelector('#youtubeIcon');
     if (youtubeIconElement) youtubeIconElement.style.bottom = "67.5px";
-        
-   // تعديل مسافة الأيقونة العائمة من الأسفل باستخدام الكلاس
-   const youtubeIconElement = document.querySelector('.youtube-icon');
-   if (youtubeIconElement) youtubeIconElement.style.bottom = "82.5px"; 
-        
+                
    }
   });
