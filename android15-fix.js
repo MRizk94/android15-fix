@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.appendChild(fakeBar);
 
       // تعديل المسافات السفلية للعناصر
-      document.body.style.paddingBottom = "42.5px";
+      document.body.style.paddingBottom = "37.5px";
 
       const fab = document.querySelector('.floating-btn');
       if (fab) fab.style.bottom = "82.5px";
