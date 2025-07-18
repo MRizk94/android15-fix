@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+<script> document.addEventListener("DOMContentLoaded", () => {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
     const isAndroid15 = userAgent.includes("Android 15");
 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.appendChild(fakeBar);
 
       // تعديل المسافات السفلية للعناصر
-      
+      document.body.style.paddingBottom = "42.5px";
 
       const fab = document.querySelector('.floating-btn');
       if (fab) fab.style.bottom = "82.5px";
@@ -40,3 +40,4 @@ document.addEventListener("DOMContentLoaded", () => {
       if (floatingMenu) floatingMenu.style.bottom = "132.5px";
     }
   });
+</script>
