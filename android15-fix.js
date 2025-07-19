@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    const isAndroid15 = userAgent.includes("Android 15");
+  // التحقق من إصدار أندرويد
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  const androidVersionMatch = userAgent.match(/Android (\d+)/);
+  const androidVersion = androidVersionMatch ? parseInt(androidVersionMatch[1], 10) : 0;
 
-    if (isAndroid15) {
-      // إنشاء <style> خاص بـ Android 15 فقط
+  if (androidVersion >= 15) {
+      // إنشاء <style> خاص بـ Android 15 والأعلي
       const style = document.createElement('style');
       style.innerHTML = `
         #android-nav-color-fake {
