@@ -14,14 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
           left: 0;
           width: 100%;
           height: 42.5px;
-          background-color: transparent; /* لون خلفية الصفحة */
+          background-color: #e1f5fe; /* لون خلفية الصفحة */
           z-index: 9999;
           pointer-events: none;
         }
       `;
       document.head.appendChild(style);
 
-
+      // إنشاء عنصر الشريط السفلي الوهمي
+      const fakeBar = document.createElement('div');
+      fakeBar.id = "android-nav-color-fake";
+      document.body.appendChild(fakeBar);
 
       // تعديل المسافة السفلية لمحتوى الصفحة
       document.body.style.paddingBottom = "42.5px";
