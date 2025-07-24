@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
           left: 0;
           width: 100%;
           height: 42.5px;
-          background-color: ; /* لون خلفية الصفحة */
+          
           z-index: 9999;
           pointer-events: none;
         }
