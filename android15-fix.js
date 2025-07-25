@@ -1,7 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // التحقق من إصدار أندرويد
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
   const androidVersionMatch = userAgent.match(/Android (\d+)/);
   const androidVersion = androidVersionMatch ? parseInt(androidVersionMatch[1], 10) : 0;
+
+  // تغيير لون شريط الحالة العلوي (Status Bar)
+  const metaThemeColor = document.querySelector("meta[name=theme-color]");
+  if (metaThemeColor) {
+    metaThemeColor.setAttribute("content", "#004C97");
+  } else {
+    const newMeta = document.createElement('meta');
+    newMeta.name = "theme-color";
+    newMeta.content = "#004C97"; // أزرق غامق ليظهر النص الأبيض بوضوح
+    document.head.appendChild(newMeta);
+  }
 
   if (androidVersion >= 15) {
     const style = document.createElement('style');
@@ -14,27 +26,22 @@ document.addEventListener("DOMContentLoaded", () => {
         width: 100%;
         height: 42.5px;
         background-color: transparent;
-        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* ظل خفيف لتمييز الحافة */
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* ظل خفيف */
         z-index: 9999;
         pointer-events: none;
-      }
-
-      /* تحسين مظهر شارة الإشعارات */
-      .notification-badge {
-        background-color: red !important;
-        color: white !important;
-        font-weight: bold;
-        font-size: 14px;
       }
     `;
     document.head.appendChild(style);
 
+    // إنشاء عنصر الشريط السفلي الوهمي
     const fakeBar = document.createElement('div');
     fakeBar.id = "android-nav-color-fake";
     document.body.appendChild(fakeBar);
 
+    // تعديل المسافة السفلية لمحتوى الصفحة
     document.body.style.paddingBottom = "42.5px";
 
+    // تعديل مواضع العناصر حسب الشريط السفلي
     const fab = document.querySelector('.floating-btn');
     if (fab) fab.style.bottom = "82.5px";
 
