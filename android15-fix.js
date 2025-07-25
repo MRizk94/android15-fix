@@ -6,15 +6,25 @@ document.addEventListener("DOMContentLoaded", () => {
   if (androidVersion >= 15) {
     const style = document.createElement('style');
     style.innerHTML = `
+      /* الشريط السفلي الوهمي */
       #android-nav-color-fake {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
         height: 42.5px;
-        background-color: transparent; /* ← تم التعديل هنا */
+        background-color: transparent;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* ظل خفيف لتمييز الحافة */
         z-index: 9999;
         pointer-events: none;
+      }
+
+      /* تحسين مظهر شارة الإشعارات */
+      .notification-badge {
+        background-color: red !important;
+        color: white !important;
+        font-weight: bold;
+        font-size: 14px;
       }
     `;
     document.head.appendChild(style);
